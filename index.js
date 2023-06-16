@@ -6,9 +6,16 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 
-const authRouter = require('./src/router/autheticationRouter')
+const authRouter = require('./src/router/authRouter')
+const userRouter = require('./src/router/userRouter')
 
 const port = process.env.PORT;
+
+
+//app.use(express.bodyParser());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 mongoose
     .connect(process.env.URL_DB)
@@ -16,6 +23,9 @@ mongoose
     .catch((error) => {
         console.log(error);
     });
+
+app.use('/api/auth',authRouter)
+app.use('/api/user',userRouter)
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

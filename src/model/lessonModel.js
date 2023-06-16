@@ -23,6 +23,6 @@ const LessonSchema = new mongoose.Schema({
     conteudo: {
       type: String
     }
-  });
+  },{timestamps:true});
   
   module.exports = mongoose.model('Lesson', LessonSchema);

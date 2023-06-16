@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
   informacoesAdicionais: {
     type: mongoose.Schema.Types.Mixed // Pode ser personalizado de acordo com as informações necessárias
   }
-});
+},{timestamps:true});
 
 const User = mongoose.model('User', UserSchema);
 

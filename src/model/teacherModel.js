@@ -17,6 +17,6 @@ const TeacherSchema = new mongoose.Schema({
     informacoesAdicionais: {
       type: mongoose.Schema.Types.Mixed
     }
-  });
+  },{timestamps:true});
   
   module.exports = mongoose.model('Teacher', TeacherSchema);

@@ -8,6 +8,6 @@ const SubjectSchema = new mongoose.Schema({
     descricao: {
       type: String
     }
-  });
+  },{timestamps:true});
   
 module.exports = mongoose.model('Subject', SubjectSchema);

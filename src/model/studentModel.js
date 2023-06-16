@@ -23,7 +23,7 @@ const StudentSchema = new mongoose.Schema({
   informacoesAdicionais: {
     type: mongoose.Schema.Types.Mixed // Pode ser personalizado de acordo com as informações necessárias
   }
-});
+},{timestamps:true});
 
 
 module.exports = mongoose.model('Student', StudentSchema);

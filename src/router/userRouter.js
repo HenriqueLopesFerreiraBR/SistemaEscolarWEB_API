@@ -3,6 +3,16 @@ const router = express.Router();
 const User = require("../model/userModel");
 const verifyToken = require("../middleware/autheticationMiddleware");
 
+router.get('/', async(req, res)=>{
+    try {
+        const user = await User.find();
+        res.status(200).json(user);
+    } catch (error) {
+        console.error("Erro ao obter o usuário:", error);
+        res.status(400).json(error);
+    }
+})
+
 router.get("/:id", verifyToken, async (req, res) => {
     const id = req.params.id;
 

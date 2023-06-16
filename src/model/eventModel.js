@@ -16,6 +16,6 @@ const EventSchema = new mongoose.Schema({
     hora: {
       type: String
     }
-  });
+  },{timestamps:true});
   
 module.exports = mongoose.model('Event', EventSchema);
